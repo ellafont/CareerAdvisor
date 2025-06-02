@@ -66,7 +66,97 @@ st.markdown("""
         color: #1a1a1a !important;
     }
     
-    /* Main header with high contrast fallback */
+    /* Sidebar modern redesign */
+    .css-1d391kg {
+        background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
+        border-right: 1px solid #e2e8f0 !important;
+    }
+    
+    /* Sidebar content styling */
+    .css-1d391kg .stMarkdown,
+    .css-1d391kg .stText,
+    .css-1d391kg p,
+    .css-1d391kg div,
+    .css-1d391kg span,
+    .css-1d391kg h1,
+    .css-1d391kg h2,
+    .css-1d391kg h3 {
+        color: #1a1a1a !important;
+    }
+    
+    /* Modern success status cards */
+    .status-card-success {
+        background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%) !important;
+        border: 1px solid #22c55e !important;
+        border-radius: 12px !important;
+        padding: 1rem !important;
+        margin: 0.5rem 0 !important;
+        box-shadow: 0 2px 4px rgba(34, 197, 94, 0.1) !important;
+        color: #166534 !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Modern info status cards */
+    .status-card-info {
+        background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;
+        border: 1px solid #3b82f6 !important;
+        border-radius: 12px !important;
+        padding: 1rem !important;
+        margin: 0.5rem 0 !important;
+        box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1) !important;
+        color: #1d4ed8 !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Modern warning status cards */
+    .status-card-warning {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+        border: 1px solid #f59e0b !important;
+        border-radius: 12px !important;
+        padding: 1rem !important;
+        margin: 0.5rem 0 !important;
+        box-shadow: 0 2px 4px rgba(245, 158, 11, 0.1) !important;
+        color: #92400e !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Sidebar section headers */
+    .sidebar-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        margin: 1.5rem 0 1rem 0 !important;
+        padding: 0.5rem 0 !important;
+        border-bottom: 2px solid #e2e8f0 !important;
+    }
+    
+    /* Status indicator styling */
+    .status-indicator {
+        display: flex !important;
+        align-items: center !important;
+        padding: 0.75rem 1rem !important;
+        border-radius: 8px !important;
+        margin: 0.25rem 0 !important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+    }
+    
+    .status-active {
+        background-color: #dcfce7 !important;
+        color: #166534 !important;
+        border-left: 3px solid #22c55e !important;
+    }
+    
+    .status-inactive {
+        background-color: #f1f5f9 !important;
+        color: #64748b !important;
+        border-left: 3px solid #cbd5e1 !important;
+    }
+    
+    /* Main header with fallback color */
     .main-header {
         font-size: 2.5rem;
         font-weight: 700;
@@ -85,6 +175,11 @@ st.markdown("""
             color: #2563eb !important;
             background: none !important;
         }
+        
+        .sidebar-header {
+            color: #2563eb !important;
+            background: none !important;
+        }
     }
     
     /* Ensure all text is visible */
@@ -94,17 +189,17 @@ st.markdown("""
     
     /* Debug console styling */
     .debug-log {
-        background-color: #0d1117 !important;
-        color: #58a6ff !important;
+        background-color: #0f172a !important;
+        color: #38bdf8 !important;
         padding: 1rem;
-        border-radius: 8px;
+        border-radius: 12px;
         font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
         font-size: 13px;
         line-height: 1.4;
         max-height: 300px;
         overflow-y: auto;
-        border: 1px solid #30363d;
-        box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+        border: 1px solid #1e293b;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
     }
     
     /* Test result cards */
@@ -179,12 +274,13 @@ st.markdown("""
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
         color: white !important;
         border: none !important;
-        border-radius: 8px !important;
+        border-radius: 10px !important;
         padding: 0.75rem 1.5rem !important;
         font-weight: 600 !important;
         font-size: 14px !important;
         transition: all 0.2s ease !important;
         box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3) !important;
+        width: 100% !important;
     }
     
     .stButton > button:hover {
@@ -202,6 +298,20 @@ st.markdown("""
     .stButton > button[kind="primary"]:hover {
         background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important;
         box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4) !important;
+    }
+    
+    /* Secondary button styling */
+    .stButton > button[kind="secondary"] {
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+        color: #374151 !important;
+        border: 1px solid #d1d5db !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .stButton > button[kind="secondary"]:hover {
+        background: linear-gradient(135deg, #e2e8f0 0%, #d1d5db 100%) !important;
+        color: #1f2937 !important;
+        transform: translateY(-1px) !important;
     }
     
     /* Info boxes with better contrast */
@@ -225,11 +335,6 @@ st.markdown("""
         border: 1px solid #bbf7d0;
     }
     
-    /* Sidebar styling */
-    .css-1d391kg {
-        background-color: #f8fafc !important;
-    }
-    
     /* Ensure all form elements are visible */
     .stTextInput > div > div > input,
     .stTextArea > div > div > textarea,
@@ -244,6 +349,20 @@ st.markdown("""
     .stTextArea > div > div > textarea:focus {
         border-color: #3b82f6 !important;
         box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    }
+    
+    /* Checkbox styling */
+    .stCheckbox > label {
+        background-color: #ffffff !important;
+        border-radius: 8px !important;
+        padding: 0.75rem !important;
+        border: 1px solid #e5e7eb !important;
+        transition: all 0.2s ease !important;
+    }
+    
+    .stCheckbox > label:hover {
+        border-color: #3b82f6 !important;
+        box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1) !important;
     }
     
     /* Metric styling */
@@ -283,20 +402,12 @@ st.markdown("""
         color: #1a1a1a !important;
     }
     
-    /* Status indicators with high contrast */
-    .status-ready {
-        color: #059669 !important;
-        font-weight: 600;
-    }
-    
-    .status-warning {
-        color: #d97706 !important;
-        font-weight: 600;
-    }
-    
-    .status-error {
-        color: #dc2626 !important;
-        font-weight: 600;
+    /* Custom divider styling */
+    .custom-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, #e2e8f0 50%, transparent 100%);
+        margin: 1.5rem 0;
+        border: none;
     }
     
     /* Responsive design improvements */

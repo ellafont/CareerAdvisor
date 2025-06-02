@@ -65,3 +65,67 @@
 2025-06-02 09:49:27,735 - RAGCareerAdvisor - INFO - ✅ Generated response (2002 characters)
 2025-06-02 09:49:27,736 - RAGCareerAdvisor - INFO - 🎉 Pipeline completed successfully in 4.37s
 2025-06-02 09:49:27,736 - RAGCareerAdvisor - INFO - 🧪 Test suite completed: 2/3 passed (66.7%)
+2025-06-02 10:12:49,310 - RAGCareerAdvisor - INFO - ✅ RAGAS evaluation system available
+2025-06-02 10:13:09,735 - RAGCareerAdvisor - INFO - 🚀 Starting system initialization
+2025-06-02 10:13:09,737 - RAGCareerAdvisor - INFO - 🤖 Loading embedding model: avsolatorio/GIST-large-Embedding-v0
+2025-06-02 10:13:11,571 - RAGCareerAdvisor - INFO - ✅ Embedding model loaded successfully
+2025-06-02 10:13:11,571 - RAGCareerAdvisor - INFO - ✅ Google AI configured
+2025-06-02 10:13:12,451 - RAGCareerAdvisor - INFO - 📊 Connected to index 'pineconedb' with 2390 vectors
+2025-06-02 10:13:12,451 - RAGCareerAdvisor - INFO - ✅ Database validation passed
+2025-06-02 10:13:12,454 - RAGCareerAdvisor - INFO - 🎉 System initialization completed successfully
+2025-06-02 10:13:12,455 - RAGCareerAdvisor - INFO - 🔧 Initializing evaluator with config: {'model': 'gemini-2.0-flash-lite', 'temperature': 0.4, 'max_tokens': None, 'top_p': 0.8}
+2025-06-02 10:13:12,484 - RAGCareerAdvisor - INFO - ✅ RAG Evaluator initialized successfully
+2025-06-02 10:13:17,133 - RAGCareerAdvisor - INFO - 🎯 Starting RAG pipeline for query: 'I'm worried about choosing the wrong career path. How did professionals know they were making the ri...'
+2025-06-02 10:13:17,133 - RAGCareerAdvisor - INFO - 1️⃣ Generating query object...
+2025-06-02 10:13:18,074 - RAGCareerAdvisor - INFO - ✅ Query object created: {'content_string_query': 'Worried about choosing the wrong career path making the right choice career decision anxiety concerns fear professionals experiences advice guidance', 'industry_filter': []}
+2025-06-02 10:13:18,075 - RAGCareerAdvisor - INFO - 2️⃣ Retrieving relevant documents...
+2025-06-02 10:13:18,077 - RAGCareerAdvisor - INFO - 🔍 Querying database - Query: 'Worried about choosing the wrong career path makin...', Industries: []
+2025-06-02 10:13:18,958 - RAGCareerAdvisor - INFO - 📊 Retrieved 4 documents
+2025-06-02 10:13:18,960 - RAGCareerAdvisor - INFO - ✅ Retrieved 4 documents, avg relevance: 0.695
+2025-06-02 10:13:18,960 - RAGCareerAdvisor - INFO - 3️⃣ Generating final response...
+2025-06-02 10:13:23,080 - RAGCareerAdvisor - INFO - ✅ Generated response (2338 characters)
+2025-06-02 10:13:23,081 - RAGCareerAdvisor - INFO - 4️⃣ Running evaluation...
+2025-06-02 10:13:23,082 - RAGCareerAdvisor - DEBUG - 🔍 Evaluating query: I'm worried about choosing the wrong career path. How did professionals know they were making the ri...
+2025-06-02 10:13:23,083 - RAGCareerAdvisor - DEBUG - 📄 Retrieved contexts count: 4
+2025-06-02 10:13:23,084 - RAGCareerAdvisor - DEBUG - 💬 Response length: 2338 characters
+2025-06-02 10:13:23,084 - RAGCareerAdvisor - INFO - 📊 Running RAGAS evaluation...
+2025-06-02 10:13:37,676 - RAGCareerAdvisor - INFO - 📈 Evaluation complete - Faithfulness: 0.912, Relevancy: 0.882
+2025-06-02 10:13:37,677 - RAGCareerAdvisor - INFO - ✅ Evaluation complete: {'faithfulness': 0.9117647058823529, 'response_relevancy': 0.8822886496055528, 'success': True, 'timestamp': '2025-06-02T10:13:37.676807'}
+2025-06-02 10:13:37,678 - RAGCareerAdvisor - INFO - 🎉 Pipeline completed successfully in 20.55s
+2025-06-02 10:14:04,677 - RAGCareerAdvisor - INFO - 🎯 Starting RAG pipeline for query: 'What's the daily work like for a teacher?...'
+2025-06-02 10:14:04,678 - RAGCareerAdvisor - INFO - 1️⃣ Generating query object...
+2025-06-02 10:14:05,410 - RAGCareerAdvisor - INFO - ✅ Query object created: {'content_string_query': "What's daily work life like for teacher educator instructor professor experiences challenges advice typical day responsibilities tasks", 'industry_filter': ['Education, Child Development, Family Services']}
+2025-06-02 10:14:05,411 - RAGCareerAdvisor - INFO - 2️⃣ Retrieving relevant documents...
+2025-06-02 10:14:05,412 - RAGCareerAdvisor - INFO - 🔍 Querying database - Query: 'What's daily work life like for teacher educator i...', Industries: ['Education, Child Development, Family Services']
+2025-06-02 10:14:05,552 - RAGCareerAdvisor - INFO - 🏢 Applied industry filter: ['Education, Child Development, Family Services']
+2025-06-02 10:14:05,803 - RAGCareerAdvisor - INFO - 📊 Retrieved 4 documents
+2025-06-02 10:14:05,804 - RAGCareerAdvisor - INFO - ✅ Retrieved 4 documents, avg relevance: 0.686
+2025-06-02 10:14:05,804 - RAGCareerAdvisor - INFO - 3️⃣ Generating final response...
+2025-06-02 10:14:09,376 - RAGCareerAdvisor - INFO - ✅ Generated response (1869 characters)
+2025-06-02 10:14:09,376 - RAGCareerAdvisor - INFO - 4️⃣ Running evaluation...
+2025-06-02 10:14:09,378 - RAGCareerAdvisor - DEBUG - 🔍 Evaluating query: What's the daily work like for a teacher?...
+2025-06-02 10:14:09,378 - RAGCareerAdvisor - DEBUG - 📄 Retrieved contexts count: 4
+2025-06-02 10:14:09,378 - RAGCareerAdvisor - DEBUG - 💬 Response length: 1869 characters
+2025-06-02 10:14:09,378 - RAGCareerAdvisor - INFO - 📊 Running RAGAS evaluation...
+2025-06-02 10:17:07,783 - RAGCareerAdvisor - INFO - 📈 Evaluation complete - Faithfulness: nan, Relevancy: nan
+2025-06-02 10:17:07,784 - RAGCareerAdvisor - INFO - ✅ Evaluation complete: {'faithfulness': nan, 'response_relevancy': nan, 'success': True, 'timestamp': '2025-06-02T10:17:07.783592'}
+2025-06-02 10:17:07,785 - RAGCareerAdvisor - INFO - 🎉 Pipeline completed successfully in 183.11s
+2025-06-02 10:21:15,397 - RAGCareerAdvisor - INFO - 🎯 Starting RAG pipeline for query: 'If I become a firefighter, how do I do that...'
+2025-06-02 10:21:15,397 - RAGCareerAdvisor - INFO - 1️⃣ Generating query object...
+2025-06-02 10:21:16,158 - RAGCareerAdvisor - INFO - ✅ Query object created: {'content_string_query': 'If I become a firefighter emergency responder how do I do that requirements steps qualifications', 'industry_filter': ['Public and Government Services']}
+2025-06-02 10:21:16,158 - RAGCareerAdvisor - INFO - 2️⃣ Retrieving relevant documents...
+2025-06-02 10:21:16,159 - RAGCareerAdvisor - INFO - 🔍 Querying database - Query: 'If I become a firefighter emergency responder how ...', Industries: ['Public and Government Services']
+2025-06-02 10:21:16,301 - RAGCareerAdvisor - INFO - 🏢 Applied industry filter: ['Public and Government Services']
+2025-06-02 10:21:17,120 - RAGCareerAdvisor - INFO - 📊 Retrieved 4 documents
+2025-06-02 10:21:17,121 - RAGCareerAdvisor - INFO - ✅ Retrieved 4 documents, avg relevance: 0.516
+2025-06-02 10:21:17,122 - RAGCareerAdvisor - INFO - 3️⃣ Generating final response...
+2025-06-02 10:21:19,966 - RAGCareerAdvisor - INFO - ✅ Generated response (1708 characters)
+2025-06-02 10:21:19,966 - RAGCareerAdvisor - INFO - 4️⃣ Running evaluation...
+2025-06-02 10:21:19,968 - RAGCareerAdvisor - DEBUG - 🔍 Evaluating query: If I become a firefighter, how do I do that...
+2025-06-02 10:21:19,968 - RAGCareerAdvisor - DEBUG - 📄 Retrieved contexts count: 4
+2025-06-02 10:21:19,968 - RAGCareerAdvisor - DEBUG - 💬 Response length: 1708 characters
+2025-06-02 10:21:19,968 - RAGCareerAdvisor - INFO - 📊 Running RAGAS evaluation...
+2025-06-02 10:22:52,286 - RAGCareerAdvisor - INFO - 📈 Evaluation complete - Faithfulness: nan, Relevancy: nan
+2025-06-02 10:22:52,286 - RAGCareerAdvisor - INFO - ✅ Evaluation complete: {'faithfulness': nan, 'response_relevancy': nan, 'success': True, 'timestamp': '2025-06-02T10:22:52.286005'}
+2025-06-02 10:22:52,287 - RAGCareerAdvisor - INFO - 🎉 Pipeline completed successfully in 96.89s
+2025-06-02 10:25:42,196 - RAGCareerAdvisor - INFO - ✅ RAGAS evaluation system available
