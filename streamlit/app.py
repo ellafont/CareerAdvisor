@@ -1506,7 +1506,7 @@ def get_api_keys():
     return pinecone_key, google_key, index_name
 
 def main():
-    st.markdown('<h1 class="main-header">🎯 Career Guidance AI - Debug Edition</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">🎯 Career Guidance AI n</h1>', unsafe_allow_html=True)
     st.markdown("""
     <div style="text-align: center; margin-bottom: 2rem;">
     <strong>Enhanced RAG system with comprehensive debugging, testing, and evaluation</strong>
