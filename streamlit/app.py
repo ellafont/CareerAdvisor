@@ -65,13 +65,13 @@ st.markdown("""
         background-color: #ffffff !important;
         color: #1a1a1a !important;
     }
-    
+
     /* Sidebar modern redesign */
     .css-1d391kg {
         background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
         border-right: 1px solid #e2e8f0 !important;
     }
-    
+
     /* Sidebar content styling */
     .css-1d391kg .stMarkdown,
     .css-1d391kg .stText,
@@ -83,7 +83,7 @@ st.markdown("""
     .css-1d391kg h3 {
         color: #1a1a1a !important;
     }
-    
+
     /* Modern success status cards */
     .status-card-success {
         background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%) !important;
@@ -95,7 +95,7 @@ st.markdown("""
         color: #166534 !important;
         font-weight: 500 !important;
     }
-    
+
     /* Modern info status cards */
     .status-card-info {
         background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;
@@ -107,7 +107,7 @@ st.markdown("""
         color: #1d4ed8 !important;
         font-weight: 500 !important;
     }
-    
+
     /* Modern warning status cards */
     .status-card-warning {
         background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
@@ -119,10 +119,11 @@ st.markdown("""
         color: #92400e !important;
         font-weight: 500 !important;
     }
-    
+
     /* Sidebar section headers */
     .sidebar-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        /* Adjusted gradient for better text visibility against sidebar background */
+        background: linear-gradient(135deg, #5562c1 0%, #5d387c 100%) !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
         background-clip: text !important;
@@ -132,7 +133,7 @@ st.markdown("""
         padding: 0.5rem 0 !important;
         border-bottom: 2px solid #e2e8f0 !important;
     }
-    
+
     /* Status indicator styling */
     .status-indicator {
         display: flex !important;
@@ -143,50 +144,50 @@ st.markdown("""
         font-size: 0.9rem !important;
         font-weight: 500 !important;
     }
-    
+
     .status-active {
         background-color: #dcfce7 !important;
         color: #166534 !important;
         border-left: 3px solid #22c55e !important;
     }
-    
+
     .status-inactive {
         background-color: #f1f5f9 !important;
         color: #64748b !important;
         border-left: 3px solid #cbd5e1 !important;
     }
-    
+
     /* Main header with fallback color */
     .main-header {
         font-size: 2.5rem;
         font-weight: 700;
         text-align: center;
         margin-bottom: 2rem;
-        color: #1a1a1a !important;
+        color: #1a1a1a !important; /* Fallback color if background-clip is not supported initially */
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
     }
-    
+
     /* Fallback for browsers that don't support background-clip */
     @supports not (-webkit-background-clip: text) {
         .main-header {
             color: #2563eb !important;
             background: none !important;
         }
-        
+
         .sidebar-header {
-            color: #2563eb !important;
+            color: #2563eb !important; /* Ensured fallback has good contrast */
             background: none !important;
         }
     }
-    
+
     /* Ensure all text is visible */
     .stMarkdown, .stText, p, div, span {
         color: #1a1a1a !important;
     }
-    
+
     /* Debug console styling */
     .debug-log {
         background-color: #0f172a !important;
@@ -201,7 +202,7 @@ st.markdown("""
         border: 1px solid #1e293b;
         box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
     }
-    
+
     /* Test result cards */
     .test-result {
         padding: 1rem;
@@ -211,25 +212,25 @@ st.markdown("""
         font-weight: 500;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
+
     .test-pass {
         background-color: #dcfce7 !important;
         border-color: #22c55e !important;
         color: #15803d !important;
     }
-    
+
     .test-fail {
         background-color: #fef2f2 !important;
         border-color: #ef4444 !important;
         color: #dc2626 !important;
     }
-    
+
     .test-warning {
         background-color: #fefce8 !important;
         border-color: #eab308 !important;
         color: #a16207 !important;
     }
-    
+
     /* Metric cards with modern design */
     .metric-card {
         background: #ffffff !important;
@@ -240,11 +241,11 @@ st.markdown("""
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         transition: box-shadow 0.2s ease;
     }
-    
+
     .metric-card:hover {
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
-    
+
     /* Chat message styling */
     .chat-message {
         padding: 1.5rem;
@@ -256,7 +257,7 @@ st.markdown("""
         border: 1px solid #e2e8f0;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-    
+
     /* Response container */
     .response-container {
         background-color: #ffffff !important;
@@ -268,10 +269,11 @@ st.markdown("""
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         line-height: 1.6;
     }
-    
+
     /* Enhanced button styling */
     .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        /* Adjusted gradient for better contrast with white text */
+        background: linear-gradient(135deg, #5c54d4 0%, #6a3a93 100%) !important;
         color: white !important;
         border: none !important;
         border-radius: 10px !important;
@@ -279,41 +281,42 @@ st.markdown("""
         font-weight: 600 !important;
         font-size: 14px !important;
         transition: all 0.2s ease !important;
-        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3) !important;
+        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3) !important; /* Original shadow, consider adjusting if base color changes significantly */
         width: 100% !important;
     }
-    
+
     .stButton > button:hover {
-        background: linear-gradient(135deg, #5a6fd8 0%, #6b4190 100%) !important;
+        /* Adjusted hover gradient for better contrast with white text */
+        background: linear-gradient(135deg, #514aac 0%, #5f3082 100%) !important;
         transform: translateY(-1px) !important;
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important; /* Original shadow */
     }
-    
+
     /* Primary button override */
     .stButton > button[kind="primary"] {
-        background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+        background: linear-gradient(135deg, #059669 0%, #047857 100%) !important; /* This already has good contrast with white */
         box-shadow: 0 2px 4px rgba(5, 150, 105, 0.3) !important;
     }
-    
+
     .stButton > button[kind="primary"]:hover {
-        background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important;
+        background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important; /* This also has good contrast */
         box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4) !important;
     }
-    
+
     /* Secondary button styling */
     .stButton > button[kind="secondary"] {
         background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
-        color: #374151 !important;
+        color: #374151 !important; /* Good contrast */
         border: 1px solid #d1d5db !important;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     }
-    
+
     .stButton > button[kind="secondary"]:hover {
         background: linear-gradient(135deg, #e2e8f0 0%, #d1d5db 100%) !important;
-        color: #1f2937 !important;
+        color: #1f2937 !important; /* Good contrast */
         transform: translateY(-1px) !important;
     }
-    
+
     /* Info boxes with better contrast */
     .info-box {
         background-color: #eff6ff !important;
@@ -324,7 +327,7 @@ st.markdown("""
         margin: 1rem 0;
         border: 1px solid #bfdbfe;
     }
-    
+
     .success-box {
         background-color: #f0fdf4 !important;
         color: #166534 !important;
@@ -334,7 +337,7 @@ st.markdown("""
         margin: 1rem 0;
         border: 1px solid #bbf7d0;
     }
-    
+
     /* Ensure all form elements are visible */
     .stTextInput > div > div > input,
     .stTextArea > div > div > textarea,
@@ -344,40 +347,40 @@ st.markdown("""
         border: 2px solid #d1d5db !important;
         border-radius: 8px !important;
     }
-    
+
     .stTextInput > div > div > input:focus,
     .stTextArea > div > div > textarea:focus {
         border-color: #3b82f6 !important;
         box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
     }
-    
+
     /* Checkbox styling */
     .stCheckbox > label {
-        background-color: #ffffff !important;
+        background-color: #ffffff !important; /* Text color will be #1a1a1a by inheritance */
         border-radius: 8px !important;
         padding: 0.75rem !important;
         border: 1px solid #e5e7eb !important;
         transition: all 0.2s ease !important;
     }
-    
+
     .stCheckbox > label:hover {
         border-color: #3b82f6 !important;
         box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1) !important;
     }
-    
+
     /* Metric styling */
-    .css-1xarl3l {
+    .css-1xarl3l { /* Streamlit's default metric class */
         background-color: #ffffff !important;
         color: #1a1a1a !important;
         border: 1px solid #e5e7eb !important;
         border-radius: 8px !important;
     }
-    
+
     /* Progress bars */
     .stProgress > div > div > div {
         background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
     }
-    
+
     /* Expandable sections */
     .streamlit-expanderHeader {
         background-color: #f8fafc !important;
@@ -385,23 +388,23 @@ st.markdown("""
         border: 1px solid #e5e7eb !important;
         border-radius: 8px !important;
     }
-    
+
     .streamlit-expanderContent {
         background-color: #ffffff !important;
         color: #1a1a1a !important;
         border: 1px solid #e5e7eb !important;
     }
-    
+
     /* Override any dark theme elements */
-    .stApp > div {
+    .stApp > div { /* Catch-all for main content area divs */
         background-color: #ffffff !important;
     }
-    
+
     /* Ensure headers are visible */
     h1, h2, h3, h4, h5, h6 {
         color: #1a1a1a !important;
     }
-    
+
     /* Custom divider styling */
     .custom-divider {
         height: 1px;
@@ -409,17 +412,17 @@ st.markdown("""
         margin: 1.5rem 0;
         border: none;
     }
-    
+
     /* Responsive design improvements */
     @media (max-width: 768px) {
         .main-header {
             font-size: 2rem;
         }
-        
+
         .metric-card {
             padding: 1rem;
         }
-        
+
         .response-container {
             padding: 1.5rem;
         }
