@@ -57,70 +57,261 @@ def setup_logging():
 # Initialize logger
 logger = setup_logging()
 
-# Custom CSS with proper color contrast
+# Custom CSS with WCAG AA compliant contrast and modern design
 st.markdown("""
 <style>
-    .main-header {
-        font-size: 3rem;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 2rem;
-        color: #1f2937;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    /* Force light theme for better visibility */
+    .stApp {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
     }
     
+    /* Main header with high contrast fallback */
+    .main-header {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #1a1a1a !important;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    /* Fallback for browsers that don't support background-clip */
     @supports not (-webkit-background-clip: text) {
         .main-header {
-            color: #1f2937 !important;
+            color: #2563eb !important;
             background: none !important;
         }
     }
     
-    .debug-log {
-        background-color: #1a1a1a;
-        color: #00ff00;
-        padding: 1rem;
-        border-radius: 8px;
-        font-family: 'Courier New', monospace;
-        font-size: 12px;
-        max-height: 300px;
-        overflow-y: auto;
-        border: 1px solid #333;
+    /* Ensure all text is visible */
+    .stMarkdown, .stText, p, div, span {
+        color: #1a1a1a !important;
     }
     
-    .test-result {
+    /* Debug console styling */
+    .debug-log {
+        background-color: #0d1117 !important;
+        color: #58a6ff !important;
         padding: 1rem;
         border-radius: 8px;
+        font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+        font-size: 13px;
+        line-height: 1.4;
+        max-height: 300px;
+        overflow-y: auto;
+        border: 1px solid #30363d;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    }
+    
+    /* Test result cards */
+    .test-result {
+        padding: 1rem;
+        border-radius: 12px;
         margin: 0.5rem 0;
         border-left: 4px solid;
+        font-weight: 500;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     .test-pass {
-        background-color: #d4edda;
-        border-color: #28a745;
-        color: #155724;
+        background-color: #dcfce7 !important;
+        border-color: #22c55e !important;
+        color: #15803d !important;
     }
     
     .test-fail {
-        background-color: #f8d7da;
-        border-color: #dc3545;
-        color: #721c24;
+        background-color: #fef2f2 !important;
+        border-color: #ef4444 !important;
+        color: #dc2626 !important;
     }
     
     .test-warning {
-        background-color: #fff3cd;
-        border-color: #ffc107;
-        color: #856404;
+        background-color: #fefce8 !important;
+        border-color: #eab308 !important;
+        color: #a16207 !important;
     }
     
+    /* Metric cards with modern design */
     .metric-card {
-        background: white;
+        background: #ffffff !important;
+        color: #1a1a1a !important;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.2s ease;
+    }
+    
+    .metric-card:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Chat message styling */
+    .chat-message {
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 1rem 0;
+        border-left: 4px solid #3b82f6;
+        background-color: #f8fafc !important;
+        color: #1e293b !important;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    /* Response container */
+    .response-container {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        line-height: 1.6;
+    }
+    
+    /* Enhanced button styling */
+    .stButton > button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 0.75rem 1.5rem !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3) !important;
+    }
+    
+    .stButton > button:hover {
+        background: linear-gradient(135deg, #5a6fd8 0%, #6b4190 100%) !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+    }
+    
+    /* Primary button override */
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+        box-shadow: 0 2px 4px rgba(5, 150, 105, 0.3) !important;
+    }
+    
+    .stButton > button[kind="primary"]:hover {
+        background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important;
+        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4) !important;
+    }
+    
+    /* Info boxes with better contrast */
+    .info-box {
+        background-color: #eff6ff !important;
+        color: #1e40af !important;
         padding: 1rem;
         border-radius: 8px;
-        border: 1px solid #ddd;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-left: 4px solid #3b82f6;
+        margin: 1rem 0;
+        border: 1px solid #bfdbfe;
+    }
+    
+    .success-box {
+        background-color: #f0fdf4 !important;
+        color: #166534 !important;
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 4px solid #22c55e;
+        margin: 1rem 0;
+        border: 1px solid #bbf7d0;
+    }
+    
+    /* Sidebar styling */
+    .css-1d391kg {
+        background-color: #f8fafc !important;
+    }
+    
+    /* Ensure all form elements are visible */
+    .stTextInput > div > div > input,
+    .stTextArea > div > div > textarea,
+    .stSelectbox > div > div > select {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
+        border: 2px solid #d1d5db !important;
+        border-radius: 8px !important;
+    }
+    
+    .stTextInput > div > div > input:focus,
+    .stTextArea > div > div > textarea:focus {
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    }
+    
+    /* Metric styling */
+    .css-1xarl3l {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Progress bars */
+    .stProgress > div > div > div {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+    }
+    
+    /* Expandable sections */
+    .streamlit-expanderHeader {
+        background-color: #f8fafc !important;
+        color: #1a1a1a !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 8px !important;
+    }
+    
+    .streamlit-expanderContent {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
+        border: 1px solid #e5e7eb !important;
+    }
+    
+    /* Override any dark theme elements */
+    .stApp > div {
+        background-color: #ffffff !important;
+    }
+    
+    /* Ensure headers are visible */
+    h1, h2, h3, h4, h5, h6 {
+        color: #1a1a1a !important;
+    }
+    
+    /* Status indicators with high contrast */
+    .status-ready {
+        color: #059669 !important;
+        font-weight: 600;
+    }
+    
+    .status-warning {
+        color: #d97706 !important;
+        font-weight: 600;
+    }
+    
+    .status-error {
+        color: #dc2626 !important;
+        font-weight: 600;
+    }
+    
+    /* Responsive design improvements */
+    @media (max-width: 768px) {
+        .main-header {
+            font-size: 2rem;
+        }
+        
+        .metric-card {
+            padding: 1rem;
+        }
+        
+        .response-container {
+            padding: 1.5rem;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
