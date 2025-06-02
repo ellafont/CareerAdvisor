@@ -67,22 +67,35 @@ st.markdown("""
     }
 
     /* Sidebar modern redesign */
-    .css-1d391kg {
+    .css-1d391kg { /* Main sidebar container */
         background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
         border-right: 1px solid #e2e8f0 !important;
     }
 
-    /* Sidebar content styling */
+    /* Sidebar content styling - ensure all text here is dark */
     .css-1d391kg .stMarkdown,
+    .css-1d391kg .stMarkdown p, /* Explicitly target paragraphs in markdown */
     .css-1d391kg .stText,
     .css-1d391kg p,
-    .css-1d391kg div,
+    .css-1d391kg div, /* Be cautious, this is broad */
     .css-1d391kg span,
+    .css-1d391kg label, /* For any labels inside sidebar */
     .css-1d391kg h1,
     .css-1d391kg h2,
-    .css-1d391kg h3 {
+    .css-1d391kg h3,
+    .css-1d391kg h4,
+    .css-1d391kg h5,
+    .css-1d391kg h6 {
         color: #1a1a1a !important;
     }
+    /* Ensure links in sidebar are also styled for light theme */
+    .css-1d391kg a {
+        color: #1d4ed8 !important; /* Consistent link color */
+    }
+    .css-1d391kg a:hover {
+        color: #1e40af !important;
+    }
+
 
     /* Modern success status cards */
     .status-card-success {
@@ -122,7 +135,6 @@ st.markdown("""
 
     /* Sidebar section headers */
     .sidebar-header {
-        /* Adjusted gradient for better text visibility against sidebar background */
         background: linear-gradient(135deg, #5562c1 0%, #5d387c 100%) !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
@@ -163,7 +175,7 @@ st.markdown("""
         font-weight: 700;
         text-align: center;
         margin-bottom: 2rem;
-        color: #1a1a1a !important; /* Fallback color if background-clip is not supported initially */
+        color: #1a1a1a !important; 
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -178,15 +190,21 @@ st.markdown("""
         }
 
         .sidebar-header {
-            color: #2563eb !important; /* Ensured fallback has good contrast */
+            color: #2563eb !important; 
             background: none !important;
         }
     }
 
-    /* Ensure all text is visible */
+    /* Ensure all general text is visible */
     .stMarkdown, .stText, p, div, span {
         color: #1a1a1a !important;
     }
+    /* This rule is broad. If specific component text is still wrong, more specific selectors might be needed */
+    /* For example, ensure all children of stApp also inherit this, unless specifically styled otherwise */
+    .stApp * { /* Make all descendants dark by default unless overridden by more specific rules */
+        /* color: #1a1a1a; /* CAUTION: This is very aggressive, might remove it if it breaks things */
+    }
+
 
     /* Debug console styling */
     .debug-log {
@@ -272,7 +290,6 @@ st.markdown("""
 
     /* Enhanced button styling */
     .stButton > button {
-        /* Adjusted gradient for better contrast with white text */
         background: linear-gradient(135deg, #5c54d4 0%, #6a3a93 100%) !important;
         color: white !important;
         border: none !important;
@@ -281,41 +298,55 @@ st.markdown("""
         font-weight: 600 !important;
         font-size: 14px !important;
         transition: all 0.2s ease !important;
-        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3) !important; /* Original shadow, consider adjusting if base color changes significantly */
+        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3) !important; 
         width: 100% !important;
     }
 
     .stButton > button:hover {
-        /* Adjusted hover gradient for better contrast with white text */
         background: linear-gradient(135deg, #514aac 0%, #5f3082 100%) !important;
         transform: translateY(-1px) !important;
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important; /* Original shadow */
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important; 
     }
 
     /* Primary button override */
     .stButton > button[kind="primary"] {
-        background: linear-gradient(135deg, #059669 0%, #047857 100%) !important; /* This already has good contrast with white */
+        background: linear-gradient(135deg, #059669 0%, #047857 100%) !important; 
+        color: white !important; /* Ensure text color is explicitly white for primary too */
         box-shadow: 0 2px 4px rgba(5, 150, 105, 0.3) !important;
     }
 
     .stButton > button[kind="primary"]:hover {
-        background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important; /* This also has good contrast */
+        background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important; 
         box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4) !important;
     }
 
     /* Secondary button styling */
     .stButton > button[kind="secondary"] {
         background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
-        color: #374151 !important; /* Good contrast */
+        color: #374151 !important; 
         border: 1px solid #d1d5db !important;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     }
 
     .stButton > button[kind="secondary"]:hover {
         background: linear-gradient(135deg, #e2e8f0 0%, #d1d5db 100%) !important;
-        color: #1f2937 !important; /* Good contrast */
+        color: #1f2937 !important; 
         transform: translateY(-1px) !important;
     }
+
+    /* Ensure button text within the sidebar also adheres to expected themes */
+    .css-1d391kg .stButton > button {
+        /* If sidebar buttons should be secondary by default: */
+         background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+         color: #374151 !important;
+         border: 1px solid #d1d5db !important;
+    }
+    .css-1d391kg .stButton > button:hover {
+         background: linear-gradient(135deg, #e2e8f0 0%, #d1d5db 100%) !important;
+         color: #1f2937 !important;
+    }
+    /* If sidebar buttons are primary, they should inherit the general primary style */
+
 
     /* Info boxes with better contrast */
     .info-box {
@@ -356,12 +387,17 @@ st.markdown("""
 
     /* Checkbox styling */
     .stCheckbox > label {
-        background-color: #ffffff !important; /* Text color will be #1a1a1a by inheritance */
+        background-color: #ffffff !important; 
         border-radius: 8px !important;
         padding: 0.75rem !important;
         border: 1px solid #e5e7eb !important;
         transition: all 0.2s ease !important;
     }
+    /* Text color for checkbox label should be inherited from .css-1d391kg or .stApp rules for #1a1a1a */
+     .stCheckbox > label span{
+        color: #1a1a1a !important;
+    }
+
 
     .stCheckbox > label:hover {
         border-color: #3b82f6 !important;
@@ -369,7 +405,7 @@ st.markdown("""
     }
 
     /* Metric styling */
-    .css-1xarl3l { /* Streamlit's default metric class */
+    .css-1xarl3l { 
         background-color: #ffffff !important;
         color: #1a1a1a !important;
         border: 1px solid #e5e7eb !important;
@@ -395,8 +431,8 @@ st.markdown("""
         border: 1px solid #e5e7eb !important;
     }
 
-    /* Override any dark theme elements */
-    .stApp > div { /* Catch-all for main content area divs */
+    /* Override any dark theme elements for main layout */
+    .stApp > div { 
         background-color: #ffffff !important;
     }
 
@@ -412,6 +448,37 @@ st.markdown("""
         margin: 1.5rem 0;
         border: none;
     }
+    
+    /* --- Styling for Streamlit's main "..." app menu --- */
+    /* This targets the menu that opens from the hamburger/ellipsis icon in the top-right */
+    div[data-testid="main-menu-list"] {
+        background-color: #ffffff !important; /* Light background for the menu popup */
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    div[data-testid="main-menu-list"] ul {
+        background-color: #ffffff !important; /* Ensure UL background is also white */
+    }
+
+    div[data-testid="main-menu-list"] ul li button,
+    div[data-testid="main-menu-list"] ul li a { /* Menu items */
+        color: #1a1a1a !important; /* Dark text for menu items */
+        background-color: transparent !important; /* Ensure item background is transparent */
+    }
+
+    div[data-testid="main-menu-list"] ul li button:hover,
+    div[data-testid="main-menu-list"] ul li a:hover {
+        background-color: #f0f2f6 !important; /* Light hover for menu items */
+        color: #1a1a1a !important;
+    }
+    
+    /* Ensure icons in the menu are also visible if they use fill/stroke */
+    div[data-testid="main-menu-list"] ul li button svg,
+    div[data-testid="main-menu-list"] ul li a svg {
+        fill: #1a1a1a !important; /* Or stroke, depending on SVG type */
+    }
+
 
     /* Responsive design improvements */
     @media (max-width: 768px) {

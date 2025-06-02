@@ -192,3 +192,72 @@
 2025-06-02 10:42:55,042 - RAGCareerAdvisor - INFO - 📈 Evaluation complete - Faithfulness: nan, Relevancy: nan
 2025-06-02 10:42:55,042 - RAGCareerAdvisor - INFO - ✅ Evaluation complete: {'faithfulness': nan, 'response_relevancy': nan, 'success': True, 'timestamp': '2025-06-02T10:42:55.042065'}
 2025-06-02 10:42:55,044 - RAGCareerAdvisor - INFO - 🎉 Pipeline completed successfully in 131.52s
+2025-06-02 10:58:39,264 - RAGCareerAdvisor - INFO - ✅ RAGAS evaluation system available
+2025-06-02 10:59:13,239 - RAGCareerAdvisor - INFO - 🚀 Starting system initialization
+2025-06-02 10:59:13,241 - RAGCareerAdvisor - INFO - 🤖 Loading embedding model: avsolatorio/GIST-large-Embedding-v0
+2025-06-02 10:59:14,959 - RAGCareerAdvisor - INFO - ✅ Embedding model loaded successfully
+2025-06-02 10:59:14,959 - RAGCareerAdvisor - INFO - ✅ Google AI configured
+2025-06-02 10:59:15,755 - RAGCareerAdvisor - INFO - 📊 Connected to index 'pineconedb' with 2390 vectors
+2025-06-02 10:59:15,756 - RAGCareerAdvisor - INFO - ✅ Database validation passed
+2025-06-02 10:59:15,758 - RAGCareerAdvisor - INFO - 🎉 System initialization completed successfully
+2025-06-02 10:59:17,752 - RAGCareerAdvisor - INFO - 🎯 Starting RAG pipeline for query: 'What are ways to explore careers before committing to one path?...'
+2025-06-02 10:59:17,752 - RAGCareerAdvisor - INFO - 1️⃣ Generating query object...
+2025-06-02 10:59:19,120 - RAGCareerAdvisor - INFO - ✅ Query object created: {'content_string_query': 'What are ways to explore careers before committing to one path? How to investigate career options, explore different professions, and gain experience in various fields before making a final career decision? What advice do professionals have for exploring career paths and finding the right fit? How to gain exposure to different jobs and industries? What are the best ways to learn about different careers and make an informed decision about my future career path?', 'industry_filter': []}
+2025-06-02 10:59:19,120 - RAGCareerAdvisor - INFO - 2️⃣ Retrieving relevant documents...
+2025-06-02 10:59:19,122 - RAGCareerAdvisor - INFO - 🔍 Querying database - Query: 'What are ways to explore careers before committing...', Industries: []
+2025-06-02 10:59:20,132 - RAGCareerAdvisor - INFO - 📊 Retrieved 4 documents
+2025-06-02 10:59:20,133 - RAGCareerAdvisor - INFO - ✅ Retrieved 4 documents, avg relevance: 0.710
+2025-06-02 10:59:20,133 - RAGCareerAdvisor - INFO - 3️⃣ Generating final response...
+2025-06-02 10:59:23,063 - RAGCareerAdvisor - INFO - ✅ Generated response (1657 characters)
+2025-06-02 10:59:23,063 - RAGCareerAdvisor - INFO - 🎉 Pipeline completed successfully in 5.31s
+2025-06-02 10:59:40,802 - RAGCareerAdvisor - INFO - 🚀 Starting system initialization
+2025-06-02 10:59:40,804 - RAGCareerAdvisor - INFO - ✅ Embedding model loaded successfully
+2025-06-02 10:59:40,805 - RAGCareerAdvisor - INFO - ✅ Google AI configured
+2025-06-02 10:59:41,296 - RAGCareerAdvisor - INFO - 📊 Connected to index 'pineconedb' with 2390 vectors
+2025-06-02 10:59:41,550 - RAGCareerAdvisor - WARNING - ⚠️ Database validation found issues
+2025-06-02 10:59:41,552 - RAGCareerAdvisor - INFO - 🎉 System initialization completed successfully
+2025-06-02 10:59:41,553 - RAGCareerAdvisor - INFO - 🔧 Initializing evaluator with config: {'model': 'gemini-2.0-flash-lite', 'temperature': 0.4, 'max_tokens': None, 'top_p': 0.8}
+2025-06-02 10:59:41,565 - RAGCareerAdvisor - INFO - ✅ RAG Evaluator initialized successfully
+2025-06-02 10:59:46,689 - RAGCareerAdvisor - INFO - 🎯 Starting RAG pipeline for query: 'What are ways to explore careers before committing to one path?...'
+2025-06-02 10:59:46,690 - RAGCareerAdvisor - INFO - 1️⃣ Generating query object...
+2025-06-02 10:59:47,805 - RAGCareerAdvisor - INFO - ✅ Query object created: {'content_string_query': 'What are ways to explore careers before committing to one path? How to explore different career options, exploring careers, career exploration, advice, guidance, career journey, experiences, challenges, daily life, training, skills', 'industry_filter': []}
+2025-06-02 10:59:47,805 - RAGCareerAdvisor - INFO - 2️⃣ Retrieving relevant documents...
+2025-06-02 10:59:47,807 - RAGCareerAdvisor - INFO - 🔍 Querying database - Query: 'What are ways to explore careers before committing...', Industries: []
+2025-06-02 10:59:48,302 - RAGCareerAdvisor - INFO - 📊 Retrieved 4 documents
+2025-06-02 10:59:48,303 - RAGCareerAdvisor - INFO - ✅ Retrieved 4 documents, avg relevance: 0.713
+2025-06-02 10:59:48,303 - RAGCareerAdvisor - INFO - 3️⃣ Generating final response...
+2025-06-02 10:59:50,886 - RAGCareerAdvisor - INFO - ✅ Generated response (1586 characters)
+2025-06-02 10:59:50,887 - RAGCareerAdvisor - INFO - 4️⃣ Running evaluation...
+2025-06-02 10:59:50,888 - RAGCareerAdvisor - DEBUG - 🔍 Evaluating query: What are ways to explore careers before committing to one path?...
+2025-06-02 10:59:50,889 - RAGCareerAdvisor - DEBUG - 📄 Retrieved contexts count: 4
+2025-06-02 10:59:50,889 - RAGCareerAdvisor - DEBUG - 💬 Response length: 1586 characters
+2025-06-02 10:59:50,889 - RAGCareerAdvisor - INFO - 📊 Running RAGAS evaluation...
+2025-06-02 11:00:01,807 - RAGCareerAdvisor - INFO - 📈 Evaluation complete - Faithfulness: 0.909, Relevancy: 0.927
+2025-06-02 11:00:01,808 - RAGCareerAdvisor - INFO - ✅ Evaluation complete: {'faithfulness': 0.9090909090909091, 'response_relevancy': 0.9266759666335709, 'success': True, 'timestamp': '2025-06-02T11:00:01.807627'}
+2025-06-02 11:00:01,810 - RAGCareerAdvisor - INFO - 🎉 Pipeline completed successfully in 15.12s
+2025-06-02 11:11:34,793 - RAGCareerAdvisor - INFO - ✅ RAGAS evaluation system available
+2025-06-02 11:11:46,297 - RAGCareerAdvisor - INFO - 🚀 Starting system initialization
+2025-06-02 11:11:46,298 - RAGCareerAdvisor - INFO - ✅ Embedding model loaded successfully
+2025-06-02 11:11:46,299 - RAGCareerAdvisor - INFO - ✅ Google AI configured
+2025-06-02 11:11:46,862 - RAGCareerAdvisor - INFO - 📊 Connected to index 'pineconedb' with 2390 vectors
+2025-06-02 11:11:46,862 - RAGCareerAdvisor - INFO - ✅ Database validation passed
+2025-06-02 11:11:46,863 - RAGCareerAdvisor - INFO - 🎉 System initialization completed successfully
+2025-06-02 11:11:46,863 - RAGCareerAdvisor - INFO - 🔧 Initializing evaluator with config: {'model': 'gemini-2.0-flash-lite', 'temperature': 0.4, 'max_tokens': None, 'top_p': 0.8}
+2025-06-02 11:11:46,867 - RAGCareerAdvisor - INFO - ✅ RAG Evaluator initialized successfully
+2025-06-02 11:12:00,756 - RAGCareerAdvisor - INFO - 🎯 Starting RAG pipeline for query: 'How do I know if a career is right for me?...'
+2025-06-02 11:12:00,757 - RAGCareerAdvisor - INFO - 1️⃣ Generating query object...
+2025-06-02 11:12:01,484 - RAGCareerAdvisor - INFO - ✅ Query object created: {'content_string_query': 'How know career right for me choosing deciding career path advice guidance fit passion interests', 'industry_filter': []}
+2025-06-02 11:12:01,485 - RAGCareerAdvisor - INFO - 2️⃣ Retrieving relevant documents...
+2025-06-02 11:12:01,487 - RAGCareerAdvisor - INFO - 🔍 Querying database - Query: 'How know career right for me choosing deciding car...', Industries: []
+2025-06-02 11:12:02,093 - RAGCareerAdvisor - INFO - 📊 Retrieved 4 documents
+2025-06-02 11:12:02,094 - RAGCareerAdvisor - INFO - ✅ Retrieved 4 documents, avg relevance: 0.694
+2025-06-02 11:12:02,094 - RAGCareerAdvisor - INFO - 3️⃣ Generating final response...
+2025-06-02 11:12:05,841 - RAGCareerAdvisor - INFO - ✅ Generated response (2102 characters)
+2025-06-02 11:12:05,841 - RAGCareerAdvisor - INFO - 4️⃣ Running evaluation...
+2025-06-02 11:12:05,843 - RAGCareerAdvisor - DEBUG - 🔍 Evaluating query: How do I know if a career is right for me?...
+2025-06-02 11:12:05,843 - RAGCareerAdvisor - DEBUG - 📄 Retrieved contexts count: 4
+2025-06-02 11:12:05,843 - RAGCareerAdvisor - DEBUG - 💬 Response length: 2102 characters
+2025-06-02 11:12:05,843 - RAGCareerAdvisor - INFO - 📊 Running RAGAS evaluation...
+2025-06-02 11:12:16,939 - RAGCareerAdvisor - INFO - 📈 Evaluation complete - Faithfulness: nan, Relevancy: 0.940
+2025-06-02 11:12:16,940 - RAGCareerAdvisor - INFO - ✅ Evaluation complete: {'faithfulness': nan, 'response_relevancy': 0.9401865498500107, 'success': True, 'timestamp': '2025-06-02T11:12:16.939713'}
+2025-06-02 11:12:16,940 - RAGCareerAdvisor - INFO - 🎉 Pipeline completed successfully in 16.18s
