@@ -1478,30 +1478,46 @@ if 'debug_mode' not in st.session_state:
     st.session_state.debug_mode = False
 
 def get_api_keys():
-    """Get API keys from environment variables or user input"""
-    # Try environment variables first (for deployment)
-    pinecone_key = os.getenv('PINECONE_API_KEY')
-    google_key = os.getenv('GOOGLE_API_KEY')
-    index_name = os.getenv('PINECONE_INDEX_NAME', 'pineconedb')
+    """Get API keys from Streamlit secrets or user input"""
+    pinecone_key = None
+    google_key = None
+    index_name = None
     
-    # If not in environment, get from user input
-    if not pinecone_key:
-        pinecone_key = st.sidebar.text_input("Pinecone API Key", type="password", 
-                                           help="Your Pinecone API key")
-    else:
-        st.sidebar.success("✅ Pinecone API key loaded from environment")
+    # Try Streamlit secrets first (for deployment)
+    try:
+        pinecone_key = st.secrets["PINECONE_API_KEY"]
+        google_key = st.secrets["GOOGLE_API_KEY"]
+        index_name = st.secrets.get("PINECONE_INDEX_NAME", "pineconedb")
         
-    if not google_key:
-        google_key = st.sidebar.text_input("Google AI API Key", type="password", 
-                                         help="Your Google AI API key")
-    else:
-        st.sidebar.success("✅ Google AI API key loaded from environment")
-    
-    if not os.getenv('PINECONE_INDEX_NAME'):
-        index_name = st.sidebar.text_input("Pinecone Index Name", value="pineconedb",
-                                         help="Name of your Pinecone index")
-    else:
+        # Show success indicators in sidebar
+        st.sidebar.success("✅ Pinecone API key loaded from secrets")
+        st.sidebar.success("✅ Google AI API key loaded from secrets")
         st.sidebar.success(f"✅ Index name: {index_name}")
+        
+    except (KeyError, FileNotFoundError):
+        # Secrets not found, try environment variables
+        pinecone_key = os.getenv('PINECONE_API_KEY')
+        google_key = os.getenv('GOOGLE_API_KEY')
+        index_name = os.getenv('PINECONE_INDEX_NAME', 'pineconedb')
+        
+        # If still not found, get from user input
+        if not pinecone_key:
+            pinecone_key = st.sidebar.text_input("Pinecone API Key", type="password", 
+                                               help="Your Pinecone API key")
+        else:
+            st.sidebar.success("✅ Pinecone API key loaded from environment")
+            
+        if not google_key:
+            google_key = st.sidebar.text_input("Google AI API Key", type="password", 
+                                             help="Your Google AI API key")
+        else:
+            st.sidebar.success("✅ Google AI API key loaded from environment")
+        
+        if not os.getenv('PINECONE_INDEX_NAME'):
+            index_name = st.sidebar.text_input("Pinecone Index Name", value="pineconedb",
+                                             help="Name of your Pinecone index")
+        else:
+            st.sidebar.success(f"✅ Index name: {index_name}")
     
     return pinecone_key, google_key, index_name
 
